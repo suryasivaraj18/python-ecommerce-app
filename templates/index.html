@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python E-Commerce App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Python E-Commerce Store</h1>
+
+    <a href="/cart" class="cart-link">View Cart</a>
+
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <h2>{{ product.name }}</h2>
+            <p>Price: ₹{{ product.price }}</p>
+            <a href="/add_to_cart/{{ product.id }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
